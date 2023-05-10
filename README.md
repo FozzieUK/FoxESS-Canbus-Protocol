@@ -1,5 +1,5 @@
 # FoxESS-Canbus-Protocol
-FoxESS Canbus Protocol between BMS and H series inverter
+FoxESS Canbus Protocol between BMS and H series inverter (extended V1 supporting cell mV and temps)
 
 Can bus @ 500k - all Extended ID, little endian
 
@@ -86,15 +86,18 @@ then followed by cell temps (decimal 50 offset)
 | 0x0D59 | cell_57_temp       | cell_58_temp     | cell_59_temp      | cell_60_temp      | cell_61_temp | cell_62_temp | cell_63_temp     | cell_64_temp    |
 
 
+### Received frame 
+
+> 0x1871 [0x03,  0x06,  0x17,  0x05,  0x09,  0x09,  0x28,  0x22]
+
+This is broadcast by the inverter every 'n' seconds and contains a timestamp in bytes 2-7 i.e. <YY>,<MM>,<DD>,<HH>,<SS>,<mm>
 
 
 
 
 
-
-
-
-.
+.....................
+  
 .
 .
 .
