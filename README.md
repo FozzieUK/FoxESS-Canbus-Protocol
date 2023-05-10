@@ -77,3 +77,7 @@ then followed by cell temps (decimal 50 offset)
 | 0x0D51 | cell_49_temp       | cell_50_temp     | cell_51_temp      | cell_52_temp      | cell_53_temp | cell_54_temp | cell_55_temp     | cell_56_temp    |
 | 0x0D59 | cell_57_temp       | cell_58_temp     | cell_59_temp      | cell_60_temp      | cell_61_temp | cell_62_temp | cell_63_temp     | cell_64_temp    |
 
+
+
+
+No Warranty - this information is provided "as is", without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of mechantability and fitness for a particular purpose. I do not warrant the accuracy of the information in the content. I am neither affiliated with, associated, authorized, endorsed by, or in any way officially connected to FoxESS Co. Ltd
