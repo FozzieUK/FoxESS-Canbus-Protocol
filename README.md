@@ -40,6 +40,8 @@ Can bus @ 500k - all Extended ID, little endian
 
 repeats up [num_packs]
 
+| ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
+| ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
 | 0x1881 | pack_id (8=1)     | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN(ASC)| Pack8 SN(ASC)| Pack8 SN(ASC)    | Pack8 SN(ASC)   |
 | 0x1882 | pack_id (8=1)     | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN(ASC)| Pack8 SN(ASC)| Pack8 SN(ASC)    | Pack8 SN(ASC)   |
 | 0x1883 | pack_id (8=1)     | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN(ASC)| Pack8 SN(ASC)| Pack8 SN(ASC)    | Pack8 SN(ASC)   |
@@ -62,12 +64,16 @@ repeats up [num_packs]
 
 repeats up [144_cells]
 
+| ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
+| ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
 | 0x0CA5 | cell_133_mv        | cell_133_mv      | cell_134_mv       | cell_134_mv       | cell_135_mv  | cell_135_mv  | cell_136_mv      | cell_136_mv     |
 | 0x0CA9 | cell_137_mv        | cell_137_mv      | cell_138_mv       | cell_138_mv       | cell_139_mv  | cell_139_mv  | cell_140_mv      | cell_140_mv     |
 | 0x0CAD | cell_141_mv        | cell_141_mv      | cell_142_mv       | cell_142_mv       | cell_143_mv  | cell_143_mv  | cell_144_mv      | cell_144_mv     |
 
 then followed by cell temps (decimal 50 offset)
 
+| ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
+| ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
 | 0x0D21 | cell_1_temp        | cell_2_temp      | cell_3_temp       | cell_4_temp       | cell_5_temp  | cell_6_temp  | cell_7_temp      | cell_8_temp     |
 | 0x0D29 | cell_9_temp        | cell_10_temp     | cell_11_temp      | cell_12_temp      | cell_13_temp | cell_14_temp | cell_15_temp     | cell_16_temp    |
 | 0x0D31 | cell_17_temp       | cell_18_temp     | cell_19_temp      | cell_20_temp      | cell_21_temp | cell_22_temp | cell_23_temp     | cell_24_temp    |
