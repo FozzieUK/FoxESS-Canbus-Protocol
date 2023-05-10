@@ -90,7 +90,7 @@ then followed by cell temps (decimal 50 offset)
 
 > 0x1871 [0x03,  0x06,  0x17,  0x05,  0x09,  0x09,  0x28,  0x22]
 
-This is broadcast by the inverter every 'n' seconds and contains a timestamp in bytes 2-7 i.e. <YY>,<MM>,<DD>,<HH>,<SS>,<mm>
+This is broadcast by the inverter every 'n' seconds and contains a timestamp in bytes 2-7 i.e. "<YY>,<MM>,<DD>,<HH>,<SS>,<mm>"
 
 
 
