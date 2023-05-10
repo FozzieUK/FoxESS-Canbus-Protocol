@@ -103,6 +103,6 @@ This is broadcast by the inverter every 'n' seconds and contains a timestamp in 
 .
 .
 .
-Disclaimer: Any information on this wiki is informal advice, and is not supported nor endorsed by FoxESS. There is no warranty expressed or implied: you take sole responsibility for everything you do with this information and your equipment.
+**Disclaimer**: Any information on this wiki is informal advice, and is not supported nor endorsed by FoxESS. There is no warranty expressed or implied: you take sole responsibility for everything you do with this information and your equipment.
 
 There is no warranty to the accuracy of the content, nor any affiliation, or in any way a connection to FoxESS Co. Ltd
