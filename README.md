@@ -22,6 +22,9 @@ Can bus @ 500k - all Extended ID, little endian
 | 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
 | 0x1879 | 0x00              | b1=disc,b2=chg    | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
 
+### Screenshot
+![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
+
 ### Received frames
 
 > 0x1871 [0x02,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00]
