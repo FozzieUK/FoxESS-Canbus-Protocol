@@ -68,6 +68,9 @@ repeats up [num_packs]
 | 0x0C0A | Pack_6_Current    | Pack_6_Current    | ??                | ??                | pack_6_SoC   |b4-7chg/dis?  | pack_6_volts     | pack_6_volts    |
 | 0x0C0B | Pack_7_Current    | Pack_7_Current    | ??                | ??                | pack_7_SoC   |b4-7chg/dis?  | pack_7_volts     | pack_7_volts    |
 
+### Screenshot
+![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/packinf.jpg)
+
 
 ### Received frame 
 
@@ -106,6 +109,11 @@ then immediately followed by cell temps (decimal 50 offset)
 | 0x0D49 | cell_41_temp       | cell_42_temp     | cell_43_temp      | cell_44_temp      | cell_45_temp | cell_46_temp | cell_47_temp     | cell_48_temp    |
 | 0x0D51 | cell_49_temp       | cell_50_temp     | cell_51_temp      | cell_52_temp      | cell_53_temp | cell_54_temp | cell_55_temp     | cell_56_temp    |
 | 0x0D59 | cell_57_temp       | cell_58_temp     | cell_59_temp      | cell_60_temp      | cell_61_temp | cell_62_temp | cell_63_temp     | cell_64_temp    |
+
+### Screenshots
+![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/packmv.jpg)
+
+![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/packtemp.jpg)
 
 
 ### Received frame 
