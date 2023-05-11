@@ -9,26 +9,27 @@ Can bus @ 500k - all Extended ID, little endian
 
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]
 
-### Response frames
+### Response frames (complete pack statistics)
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
 | 0x1872 | slave_voltage_max | slave_voltage_max | slave_voltage_min | slave_voltage_min | charge_max   | charge_max   | discharge_max    | discharge_max   |
-| 0x1873 | voltage           | voltage           | current sensor    | current sensor    | capacity     | capacity     | kwh_remaining    | kwh_remaining   |
+| 0x1873 | pack_voltage      | pack_voltage      | pack_current sense| pack_current sense| pack_SoC     | 0x00         | pack_kwh_remain  | pack_kwh_remain |
 | 0x1874 | cells_temp_max    | cells_temp_max    | cells_temp_min    | cells_temp_min    | cells_mv_max | cells_mv_max | cells_mv_min     | cells_mv_min    |
 | 0x1875 | int_temp          | pack_temp         | pack_temp         | 0x00              | 0x01 contact | 0x00         | cycle_count      | cycle_count     |
 | 0x1876 | 0x01              | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
-| 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | id           | 0x00         | f/w version      | pack_id 0x10    |
+| 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | id           | 0x00         | f/w versions?    | pack_id 0x10    |
 | 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
 | 0x1879 | 0x00              | b1=disc,b2=chg    | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
 
-### Received frame 
+### Received frames
 
 > 0x1871 [0x02,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00]
 > 
 > 0x1871 [0x05,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]
 
-### Response frames
+
+### Response frames (pack serial numbers)
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
@@ -47,13 +48,31 @@ repeats up [num_packs]
 | 0x1882 | pack_id (8=1)     | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN(ASC)| Pack8 SN(ASC)| Pack8 SN(ASC)    | Pack8 SN(ASC)   |
 | 0x1883 | pack_id (8=1)     | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN (ASC)    | Pack8 SN(ASC)| Pack8 SN(ASC)| Pack8 SN(ASC)    | Pack8 SN(ASC)   |
 
+
+### Received frame 
+
+> 0x1871 [0x01,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00]
+
+### Response frames (individual pack data)
+
+| ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
+| ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
+| 0x0C05 | Pack_1_Current    | Pack_1_Current    | ??                | ??                | pack_1_SoC   |b4-7chg/dis?  | pack_1_volts     | pack_1_volts    |
+| 0x0C06 | Pack_2_Current    | Pack_2_Current    | ??                | ??                | pack_2_SoC   |b4-7chg/dis?  | pack_2_volts     | pack_2_volts    |
+| 0x0C07 | Pack_3_Current    | Pack_3_Current    | ??                | ??                | pack_3_SoC   |b4-7chg/dis?  | pack_3_volts     | pack_3_volts    |
+| 0x0C08 | Pack_4_Current    | Pack_4_Current    | ??                | ??                | pack_4_SoC   |b4-7chg/dis?  | pack_4_volts     | pack_4_volts    |
+| 0x0C09 | Pack_5_Current    | Pack_5_Current    | ??                | ??                | pack_5_SoC   |b4-7chg/dis?  | pack_5_volts     | pack_5_volts    |
+| 0x0C0A | Pack_6_Current    | Pack_6_Current    | ??                | ??                | pack_6_SoC   |b4-7chg/dis?  | pack_6_volts     | pack_6_volts    |
+| 0x0C0B | Pack_7_Current    | Pack_7_Current    | ??                | ??                | pack_7_SoC   |b4-7chg/dis?  | pack_7_volts     | pack_7_volts    |
+
+
 ### Received frame 
 
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]
 > 
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x04,  0x00,  0x00,  0x00]
 
-### Response frames
+### Response frames (cell mv values)
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
@@ -72,7 +91,7 @@ repeats up [144_cells]
 | 0x0CA9 | cell_137_mv        | cell_137_mv      | cell_138_mv       | cell_138_mv       | cell_139_mv  | cell_139_mv  | cell_140_mv      | cell_140_mv     |
 | 0x0CAD | cell_141_mv        | cell_141_mv      | cell_142_mv       | cell_142_mv       | cell_143_mv  | cell_143_mv  | cell_144_mv      | cell_144_mv     |
 
-then followed by cell temps (decimal 50 offset)
+then immediately followed by cell temps (decimal 50 offset)
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
