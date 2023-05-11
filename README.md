@@ -18,7 +18,7 @@ Can bus @ 500k - all Extended ID, little endian
 | 0x1874 | cells_temp_max    | cells_temp_max    | cells_temp_min    | cells_temp_min    | cells_mv_max | cells_mv_max | cells_mv_min     | cells_mv_min    |
 | 0x1875 | int_temp          | pack_temp         | pack_temp         | 0x00              | 0x01 contact | 0x00         | cycle_count      | cycle_count     |
 | 0x1876 | 0x01              | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
-| 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | id           | 0x00         | f/w versions?    | pack_id 0x10    |
+| 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | h/w version? | 0x00         | f/w versions?    | pack_id 0x10    |
 | 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
 | 0x1879 | 0x00              | ** See Note1       | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
 
