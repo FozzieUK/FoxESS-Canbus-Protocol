@@ -20,7 +20,9 @@ Can bus @ 500k - all Extended ID, little endian
 | 0x1876 | 0x01              | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
 | 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | id           | 0x00         | f/w versions?    | pack_id 0x10    |
 | 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
-| 0x1879 | 0x00              | b1=disc,b2=chg    | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
+| 0x1879 | 0x00              | ** See Note1       | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
+
+** Note1: bits 1 & 3 are set if pack discharging, bits 2 & 4 set if pack charging
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
