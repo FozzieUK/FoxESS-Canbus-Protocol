@@ -27,6 +27,7 @@ Can bus @ 500k - all Extended ID, little endian
 ** Note2: This is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
 i.e. for the packs (b7 =10,20,30,40,50,60,70,80) then 0x1F = 0001 1111, version is v1.15, 0x20 = 0010 0000 = v2.0
      for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , 0x14 = 020
+** Note3: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 which stays at a constant 3,300mV hi/lo)
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
