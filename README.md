@@ -71,13 +71,14 @@ repeats up [num_packs]
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
-| 0x0C05 | Pack_1_Current    | Pack_1_Current    | ??                | ??                | pack_1_SoC   |b4-7chg/dis?  | pack_1_volts     | pack_1_volts    |
-| 0x0C06 | Pack_2_Current    | Pack_2_Current    | ??                | ??                | pack_2_SoC   |b4-7chg/dis?  | pack_2_volts     | pack_2_volts    |
-| 0x0C07 | Pack_3_Current    | Pack_3_Current    | ??                | ??                | pack_3_SoC   |b4-7chg/dis?  | pack_3_volts     | pack_3_volts    |
-| 0x0C08 | Pack_4_Current    | Pack_4_Current    | ??                | ??                | pack_4_SoC   |b4-7chg/dis?  | pack_4_volts     | pack_4_volts    |
-| 0x0C09 | Pack_5_Current    | Pack_5_Current    | ??                | ??                | pack_5_SoC   |b4-7chg/dis?  | pack_5_volts     | pack_5_volts    |
-| 0x0C0A | Pack_6_Current    | Pack_6_Current    | ??                | ??                | pack_6_SoC   |b4-7chg/dis?  | pack_6_volts     | pack_6_volts    |
-| 0x0C0B | Pack_7_Current    | Pack_7_Current    | ??                | ??                | pack_7_SoC   |b4-7chg/dis?  | pack_7_volts     | pack_7_volts    |
+| 0x0C05 | Pack_1_Current    | Pack_1_Current    | Pack_1_avg_hitemp | Pack_1_avg_lotemp | pack_1_SoC   |b4-7chg/dis?  | pack_1_volts     | pack_1_volts    |
+| 0x0C06 | Pack_2_Current    | Pack_2_Current    | Pack_2_avg_hitemp | Pack_2_avg_lotemp | pack_2_SoC   |b4-7chg/dis?  | pack_2_volts     | pack_2_volts    |
+| 0x0C07 | Pack_3_Current    | Pack_3_Current    | Pack_3_avg_hitemp | Pack_3_avg_lotemp | pack_3_SoC   |b4-7chg/dis?  | pack_3_volts     | pack_3_volts    |
+| 0x0C08 | Pack_4_Current    | Pack_4_Current    | Pack_4_avg_hitemp | Pack_4_avg_lotemp | pack_4_SoC   |b4-7chg/dis?  | pack_4_volts     | pack_4_volts    |
+| 0x0C09 | Pack_5_Current    | Pack_5_Current    | Pack_5_avg_hitemp | Pack_5_avg_lotemp | pack_5_SoC   |b4-7chg/dis?  | pack_5_volts     | pack_5_volts    |
+| 0x0C0A | Pack_6_Current    | Pack_6_Current    | Pack_6_avg_hitemp | Pack_6_avg_lotemp | pack_6_SoC   |b4-7chg/dis?  | pack_6_volts     | pack_6_volts    |
+| 0x0C0B | Pack_7_Current    | Pack_7_Current    | Pack_7_avg_hitemp | Pack_7_avg_lotemp | pack_7_SoC   |b4-7chg/dis?  | pack_7_volts     | pack_7_volts    |
+| 0x0C0C | Pack_8_Current    | Pack_8_Current    | Pack_8_avg_hitemp | Pack_8_avg_lotemp | pack_8_SoC   |b4-7chg/dis?  | pack_8_volts     | pack_8_volts    |
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/packinf.jpg)
