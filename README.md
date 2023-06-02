@@ -16,22 +16,26 @@ Can bus @ 500k - all Extended ID, little endian
 | 0x1872 | slave_voltage_max | slave_voltage_max | slave_voltage_min | slave_voltage_min | charge_max   | charge_max   | discharge_max    | discharge_max   |
 | 0x1873 | pack_voltage      | pack_voltage      | pack_current sense| pack_current sense| pack_SoC     | 0x00         | pack_kwh_remain  | pack_kwh_remain |
 | 0x1874 | cells_temp_max    | cells_temp_max    | cells_temp_min    | cells_temp_min    | cells_mv_max | cells_mv_max | cells_mv_min     | cells_mv_min    |
-| 0x1875 | pack_temp         | pack_temp         | 0x7f/ff ??        | number_packs      | 0x01 contact | 0x00         | cycle_count      | cycle_count     |
-| 0x1876 | 0x01              | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
+| 0x1875 | pack_temp         | pack_temp         | num_packs (note4) | number_packs (dec)| 0x01 contact | 0x00         | cycle_count      | cycle_count     |
+| 0x1876 | 0x01 (Note5)      | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
 | 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | h/w version? | 0x00         | ** See Note 2    | pack_id 0x10    |
 | 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
-| 0x1879 | 0x00              | ** See Note1       | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
+| 0x1879 | 0x00              | FLAGS (Note1)     | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
 
-** Note1: bits 1 & 3 are set if pack discharging, bits 2 & 4 set if pack charging
+** Note1: FLAGS are binary bits [87654321] bits 2 & 4 are set if pack discharging, bits 3 & 5 set if pack charging, bit 6 always 1, bit 1 always 1, bits 7 & 8 so far always 0 (Need to force an error!)
 
 ** Note2: This is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
 i.e. 
 
-for the packs (b7 =10,20,30,40,50,60,70,80) then 0x1F = 0001 1111, version is v1.15, 0x20 = 0010 0000 = v2.0, 
+for the packs (b7 =10,20,30,40,50,60,70,80) then 0x1F = 0001 1111, version is v1.15, and if it was 0x20 = 0010 0000 then = v2.0, 
 
-for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , 0x14 = 020
+for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , and if it was 0x14 then = 020
      
-** Note3: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 which stays at a constant 3,300mV hi/lo)
+** Note3: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 b4-b7 which stay at a constant 3,300mV hi/lo)
+
+** Note4: 0x1875 b2 contains number of packs operational in binary so 00001111 is 4 packs, 01111111 is 7 packs, 11111111 is 8 packs
+
+** Note5: 0x1876 b0 bit 1 appears to be 1 when at maxsoc when charge not allowed - when at 0 indicates charge is possible.
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
