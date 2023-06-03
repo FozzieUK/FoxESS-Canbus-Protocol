@@ -26,11 +26,11 @@ This is sent by the inverter every 1 second and appears to be the poll for bms_s
 | 0x1872 | batt_volt_max   | batt_volt_max | batt_volt_min     | batt_volt_min     | max_charge_A  | max_charge_A  | max_discharge_A  | max_discharge_A |
 | 0x1873 | pack_volt_now   | pack_volt_now | pack_current sense| pack_current sense| pack_SoC      | 0x00          | pack_kwh_remain  | pack_kwh_remain |
 | 0x1874 | pack_temp_max   | pack_temp_max | pack_temp_min     | pack_temp_min     | pack_mv_max   | pack_mV_max   | pack_mV_min      | pack_mV_min     |
-| 0x1875 | BMS_temp        | BMS_temp      | pack_state(note4) | number_packs      | 0x01 contact  | 0x00          | cycle_count      | cycle_count     |
+| 0x1875 | BMS_temp        | BMS_temp      | pack_state(note5) | number_packs      | 0x01 contact  | 0x00          | cycle_count      | cycle_count     |
 | 0x1876 | 0x01 (Note6)    | 0x00          | cells_volts_max   | cells_volts_max   | 0x00          | 0x00          | cells_volts_min  | cells_volts_min |
-| 0x1877 | 0x00            | 0x00          | 0x00              | 0x00              | h/w version?  | 0x00          | ** See Note 5    | pack_id 0x10    |
+| 0x1877 | packError(note7)| 0x00          | 0x00              | 0x00              | h/w version?  | 0x00          | ** See Note 3    | pack_id 0x10    |
 | 0x1878 | AC_volts_max    | AC_volts_max  | 0x00              | 0x00              | wh_total      | wh_total      | wh_total         | wh_total        |
-| 0x1879 | ErrorCode(Note2)| FLAGS (Note1) | 0x00              | 0x00              | 0x00          | 0x00          | 0x00             | 0x00            |
+| 0x1879 | ErrorCode(note2)| FLAGS (Note1) | 0x00              | 0x00              | 0x00          | 0x00          | 0x00             | 0x00            |
 
 ** Note1: FLAGS are binary bits 
 bits 0,1 & 2 are status, bit 3 set if discharging, bit 4 set if charging, bit 5 is 1 if on-line, bit 7 so far always 0
@@ -64,18 +64,20 @@ don't now what all states mean yet, x03 generated when forced pack comms error a
 
 
 
-** Note3: This is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
+** Note3: 0x1877 b6 this is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
 i.e. 
 
-for the packs (b7 =10,20,30,40,50,60,70,80) then 0x1F = 0001 1111, version is v1.15, and if it was 0x20 = 0010 0000 then = v2.0, 
+for the packs (b7 =10,20,30,40,50,60,70,80) then b6 0x1F = 0001 1111, version is v1.15, and if b6 was 0x20 = 0010 0000 then = v2.0, 
 
-for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , and if it was 0x14 then = 020
+for the BMS (b7=01) then convert b6 hex to decimal 0x12 = 018 , and if b6 was 0x14 then = 020
      
 ** Note4: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 b4-b7 which stay at a constant 3,300mV hi/lo)
 
 ** Note5: 0x1875 b2 contains status for operational packs (responding) in binary so 01111111 is pack 8 not operational, 11101101 is pack 5 & 2 not operational
 
 ** Note6: 0x1876 b0 bit 1 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible.
+
+** Note7: 0x1877 b0 appears to be an error code, 0x02 when pack is in error.
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/assets/113460294/fd08a1b5-706c-4a09-b4d5-318ee1627928)
