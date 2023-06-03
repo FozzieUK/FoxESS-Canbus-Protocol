@@ -36,16 +36,14 @@ This is sent by the inverter every 1 second and appears to be the poll for bms_s
 bits 0,1 & 2 are status, bit 3 set if discharging, bit 4 set if charging, bit 5 is 1 if on-line, bit 7 so far always 0
 | bit        | Off-line |  On-line  |   On-line   | Error      |         Notes             |
 | ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
-|            |          |  (charge) | (discharge) |            |                           |
-| bit0       |    0     |     1     |      1      |     0      |  S }  02=Error            |
-| ---------- | -------- | --------- | ------------| ---------- |  T }  03=online_Discharge |
-| bit1       |    1     |     0     |      1      |     1      |  A }  04=?                |
-| ---------- | -------- | --------- | ------------| ---------- |  T }  05=online_Charge    | 
-| bit2       |    1     |     1     |      0      |     0      |  E }  06=offline          |
-| bit3       |    1     |     0     |      1      |     1      |     1=discharging         |
-| bit4       |    1     |     1     |      0      |     1      |     1=charging            |
-| bit5       |    0     |     1     |      1      |     0      |  1=on-line, 0=off-line    |
-| bit6       |    0     |     0     |      0      |     1      |     1=active error        |
+|            |          |  (charge) | (discharge) |            |  Status                   |
+| bit0       |    0     |     1     |      1      |     0      |  02=Error, 03=ok_Discharge|
+| bit1       |    1     |     0     |      1      |     1      |  04=idle?                 |
+| bit2       |    1     |     1     |      0      |     0      |  05=ok_Charge, 06=offline |
+| bit3       |    1     |     0     |      1      |     1      |     discharge flag        |
+| bit4       |    1     |     1     |      0      |     1      |     charge flag           |
+| bit5       |    0     |     1     |      1      |     0      |     operational           |
+| bit6       |    0     |     0     |      0      |     1      |     active error          |
 | bit7       |    0     |     0     |      0      |     0      |                           |
 
 
