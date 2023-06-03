@@ -3,48 +3,111 @@ FoxESS Canbus Protocol between BMS and H series inverter (extended V1 supporting
 
 Can bus @ 500k - all Extended ID, little endian
 
+## Basic Protocol
+
+When starting up, the Foxess battery storage system unlike other systems does not have a formal adoption process, the inverter 'polls' the BMS every 1 second and if the BMS responds with a valid message then it is assumed available.
+
+The BMS responds to the inverter polls, but only after it has sent the inverter one copy of the BMS data and all pack data will it close it's contactor and become operational.
+
+The inverter sends a number of different requests with specific time intervals and the BMS responds with the data requested.
+
 ## Frames
 
 ### Received frame 
 
-> 0x1871 [0x01,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]
+> 0x1871 [0x01,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]   
+
+This is sent by the inverter every 1 second and appears to be the poll for bms_send_pack_statistics.
 
 ### Response frames (complete pack statistics)
 
-| ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
-| ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
-| 0x1872 | slave_voltage_max | slave_voltage_max | slave_voltage_min | slave_voltage_min | charge_max   | charge_max   | discharge_max    | discharge_max   |
-| 0x1873 | pack_voltage      | pack_voltage      | pack_current sense| pack_current sense| pack_SoC     | 0x00         | pack_kwh_remain  | pack_kwh_remain |
-| 0x1874 | cells_temp_max    | cells_temp_max    | cells_temp_min    | cells_temp_min    | cells_mv_max | cells_mv_max | cells_mv_min     | cells_mv_min    |
-| 0x1875 | pack_temp         | pack_temp         | num_packs (note4) | number_packs (dec)| 0x01 contact | 0x00         | cycle_count      | cycle_count     |
-| 0x1876 | 0x01 (Note5)      | 0x00              | cells_volts_max   | cells_volts_max   | 0x00         | 0x00         | cells_volts_min  | cells_volts_min |
-| 0x1877 | 0x00              | 0x00              | 0x00              | 0x00              | h/w version? | 0x00         | ** See Note 2    | pack_id 0x10    |
-| 0x1878 | pack_voltage_max  | pack_voltage_max  | 0x00              | 0x00              | wh_total     | wh_total     | wh_total         | wh_total        |
-| 0x1879 | 0x00              | FLAGS (Note1)     | 0x00              | 0x00              | 0x00         | 0x00         | 0x00             | 0x00            |
+| ID     | b0              | b1            | b2                | b3                | b4            | b5            | b6               | b7              |
+| ------ | --------------- | ------------- | ----------------- | ----------------- | ------------- | ------------- | ---------------- | --------------- |
+| 0x1872 | batt_volt_max   | batt_volt_max | batt_volt_min     | batt_volt_min     | max_charge_A  | max_charge_A  | max_discharge_A  | max_discharge_A |
+| 0x1873 | pack_volt_now   | pack_volt_now | pack_current sense| pack_current sense| pack_SoC      | 0x00          | pack_kwh_remain  | pack_kwh_remain |
+| 0x1874 | pack_temp_max   | pack_temp_max | pack_temp_min     | pack_temp_min     | pack_mv_max   | pack_mV_max   | pack_mV_min      | pack_mV_min     |
+| 0x1875 | BMS_temp        | BMS_temp      | pack_state(note4) | number_packs      | 0x01 contact  | 0x00          | cycle_count      | cycle_count     |
+| 0x1876 | 0x01 (Note6)    | 0x00          | cells_volts_max   | cells_volts_max   | 0x00          | 0x00          | cells_volts_min  | cells_volts_min |
+| 0x1877 | 0x00            | 0x00          | 0x00              | 0x00              | h/w version?  | 0x00          | ** See Note 5    | pack_id 0x10    |
+| 0x1878 | AC_volts_max    | AC_volts_max  | 0x00              | 0x00              | wh_total      | wh_total      | wh_total         | wh_total        |
+| 0x1879 | ErrorCode(Note2)| FLAGS (Note1) | 0x00              | 0x00              | 0x00          | 0x00          | 0x00             | 0x00            |
 
-** Note1: FLAGS are binary bits [87654321] bits 2 & 4 are set if pack discharging, bits 3 & 5 set if pack charging, bit 6 always 1, bit 1 always 1, bits 7 & 8 so far always 0 (Need to force an error!)
+** Note1: FLAGS are binary bits 
+bits 0,1 & 2 are status, bit 3 set if discharging, bit 4 set if charging, bit 5 is 1 if on-line, bit 7 so far always 0
+| bit        | Off-line |  On-line  |   On-line   | Error      |         Notes             |
+|            |          |  (charge) | (discharge) |            |                           |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
+| bit0       |    0     |     1     |      1      |     0      |  S }  02=Error            |
+| ---------- | -------- | --------- | ------------| ---------- |  T }  03=online_Discharge |
+| bit1       |    1     |     0     |      1      |     1      |  A }  04=?                |
+| ---------- | -------- | --------- | ------------| ---------- |  T }  05=online_Charge    | 
+| bit2       |    1     |     1     |      0      |     0      |  E }  06=offline          |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
+| bit3       |    1     |     0     |      1      |     1      |     1=discharging         |
+| ---------- | -------- | --------- |-------------| ---------- | ------------------------- |
+| bit4       |    1     |     1     |      0      |     1      |     1=charging            |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
+| bit5       |    0     |     1     |      1      |     0      |  1=on-line, 0=off-line    |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
+| bit6       |    0     |     0     |      0      |     1      |     1=active error        |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
+| bit7       |    0     |     0     |      0      |     0      |                           |
+| ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
 
-** Note2: This is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
+** Note2: Error Code are binary bits 
+don't now what all states mean yet, x03 generated when forced pack comms error and contactor dropped out - inverter reports bat volt volt.
+
+| bit        |  On-line  |   Error  |         Notes             |
+|            |           |          |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit0       |     0     |     1    |        03  =              |
+| ---------- | --------- | ---------|      Pack Comms Error     |
+| bit1       |     0     |     1    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit2       |     0     |     0    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit3       |     0     |     0    |                           |
+| ---------- | --------- |----------| ------------------------- |
+| bit4       |     0     |     0    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit5       |     0     |     0    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit6       |     0     |     0    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+| bit7       |     0     |     0    |                           |
+| ---------- | --------- | ---------| ------------------------- |
+
+
+
+** Note3: This is firmware version, the top nibble is major version, bottom nibble is minor version however BMS and packs represent it differently
 i.e. 
 
 for the packs (b7 =10,20,30,40,50,60,70,80) then 0x1F = 0001 1111, version is v1.15, and if it was 0x20 = 0010 0000 then = v2.0, 
 
 for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , and if it was 0x14 then = 020
      
-** Note3: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 b4-b7 which stay at a constant 3,300mV hi/lo)
+** Note4: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 b4-b7 which stay at a constant 3,300mV hi/lo)
 
-** Note4: 0x1875 b2 contains number of packs operational in binary so 00001111 is 4 packs, 01111111 is 7 packs, 11111111 is 8 packs
+** Note5: 0x1875 b2 contains status for operational packs (responding) in binary so 01111111 is pack 8 not operational, 11101101 is pack 5 & 2 not operational
 
-** Note5: 0x1876 b0 bit 1 appears to be 1 when at maxsoc when charge not allowed - when at 0 indicates charge is possible.
+** Note6: 0x1876 b0 bit 1 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible.
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
 
+
 ### Received frames
 
-> 0x1871 [0x02,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00]
-> 
+> 0x1871 [0x02,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00] 
+
+This is sent 0.5 seconds after the bms_send_pack_statistics appears to be a bms_stop_sending, it **does not** elicit a BMS response
+
+
+### Received frames
+
 > 0x1871 [0x05,  0x00,  0x01,  0x00,  0x00,  0x00,  0x00,  0x00]
+
+This is only sent after BMS communications is established (a valid response to a poll request) and occurs 0.5 seconds after the bms_stop_sending message, the BMS responds with BMS and each battery pack serial numbers.
 
 
 ### Response frames (pack serial numbers)
@@ -71,6 +134,9 @@ repeats up [num_packs]
 
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00]
 
+This is only sent after BMS communications is established (a valid response to a poll request) and occurs 6 seconds, the BMS responds with the individual battery pack status.
+
+
 ### Response frames (individual pack data)
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
@@ -93,6 +159,8 @@ repeats up [num_packs]
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x02,  0x00,  0x00,  0x00]
 > 
 > 0x1871 [0x01,  0x00,  0x01,  0x00,  0x04,  0x00,  0x00,  0x00]
+
+These messages are only sent after BMS communications is established (a valid response to a poll request), they are sent together as a pair (100mS apart). They are sent by the inverter every 3 seconds and is the poll message for the bms to send extended data for individual cell data - bms_send_pack_cell_volts and bms_send_pack_cell_temps.
 
 ### Response frames (cell mv values)
 
@@ -136,7 +204,7 @@ then immediately followed by cell temps (decimal 50 offset)
 
 > 0x1871 [0x03,  0x06,  0x17,  0x05,  0x09,  0x09,  0x28,  0x22]
 
-This is broadcast by the inverter every 'n' seconds and contains a timestamp in bytes 2-7 i.e. ```<YY>,<MM>,<DD>,<HH>,<mm>,<ss>```
+This message is sent by the inverter every '6' seconds (0.5s after the pack serial numbers) and contains a timestamp in bytes 2-7 i.e. ```<YY>,<MM>,<DD>,<HH>,<mm>,<ss>```
 
 
 
