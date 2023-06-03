@@ -87,7 +87,7 @@ for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , and if it was 0x14 
 
 > 0x1871 [0x02,  0x00,  0x01,  0x00,  0x01,  0x00,  0x00,  0x00] 
 
-This is sent 0.5 seconds after the bms_send_pack_statistics appears to be a bms_stop_sending, it **does not** elicit a BMS response
+This is sent 0.5 seconds after the bms_send_pack_statistics appears to be a bms_stop_sending (or an 'ack'), it **does not** elicit a BMS response
 
 
 ### Received frames
