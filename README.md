@@ -78,7 +78,7 @@ for the BMS (b7=01) then convert hex to decimal 0x12 = 018 , and if it was 0x14 
 ** Note6: 0x1876 b0 bit 1 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible.
 
 ### Screenshot
-![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/blob/main/bmspack.jpg)
+![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/assets/113460294/fd08a1b5-706c-4a09-b4d5-318ee1627928)
 
 
 ### Received frames
