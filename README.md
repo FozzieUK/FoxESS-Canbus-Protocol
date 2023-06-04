@@ -33,6 +33,7 @@ This is sent by the inverter every 1 second and appears to be the poll for bms_s
 | 0x1879 | ErrorCode(note2)| FLAGS (Note1) | 0x00              | 0x00              | 0x00          | 0x00          | 0x00             | 0x00            |
 
 ** Note1: FLAGS are binary bits 
+
 bits 0,1 & 2 are status, bit 3 set if discharging, bit 4 set if charging, bit 5 is 1 if on-line, bit 7 so far always 0
 | bit        | Off-line |  On-line  |   On-line   | Error      |         Notes             |
 | ---------- | -------- | --------- | ------------| ---------- | ------------------------- |
@@ -47,7 +48,8 @@ bits 0,1 & 2 are status, bit 3 set if discharging, bit 4 set if charging, bit 5 
 | bit7       |    0     |     0     |      0      |     0      |                           |
 
 
-** Note2: Error Code are binary bits 
+** Note2: Error Code are binary bits
+
 don't now what all states mean yet, x03 generated when forced pack comms error and contactor dropped out - inverter reports bat volt volt.
 
 | bit        |  On-line  |   Error  |         Notes             |
@@ -75,7 +77,7 @@ for the BMS (b7=01) then convert b6 hex to decimal 0x12 = 018 , and if b6 was 0x
 
 ** Note5: 0x1875 b2 contains status for operational packs (responding) in binary so 01111111 is pack 8 not operational, 11101101 is pack 5 & 2 not operational
 
-** Note6: 0x1876 b0 bit 1 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible.
+** Note6: 0x1876 b0 bit 0 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible - addn'l note there is something more to it than this, it's not as straight forward - needs more testing to find what sets/unsets bit0 of byte0
 
 ** Note7: 0x1877 b0 appears to be an error code, 0x02 when pack is in error.
 
