@@ -38,76 +38,91 @@ BO_ 3101 BMS_CellVolts_x1: 8 FoxESS_inverter
    SG_ cell_2_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_3_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_4_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3105 BMS_CellVolts_x4: 8 FoxESS_inverter
    SG_ cell_5_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_6_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_7_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_8_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3109 BMS_CellVolts_x8: 8 FoxESS_inverter
    SG_ cell_9_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_10_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_11_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_12_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3113 BMS_CellVoltsx12: 8 FoxESS_inverter
    SG_ cell_13_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_14_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_15_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_16_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3117 BMS_CellVolts5: 8 FoxESS_inverter
    SG_ cell_17_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_18_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_19_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_20_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3121 BMS_CellVolts6: 8 FoxESS_inverter
    SG_ cell_21_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_22_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_23_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_24_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3125 BMS_CellVolts7: 8 FoxESS_inverter
    SG_ cell_25_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_26_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_27_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_28_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3129 BMS_CellVolts8: 8 FoxESS_inverter
    SG_ cell_29_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_30_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_31_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_32_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3133 BMS_CellVolts9: 8 FoxESS_inverter
    SG_ cell_33_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_34_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_35_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_36_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3137 BMS_CellVolts10: 8 FoxESS_inverter
    SG_ cell_37_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_38_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_39_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_40_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3141 BMS_CellVolts11: 8 FoxESS_inverter
    SG_ cell_41_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_42_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_43_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_44_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3145 BMS_CellVolts12: 8 FoxESS_inverter
    SG_ cell_45_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_46_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_47_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_48_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3149 BMS_CellVolts13: 8 FoxESS_inverter
    SG_ cell_49_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_50_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_51_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_52_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3153 BMS_CellVolts14: 8 FoxESS_inverter
    SG_ cell_53_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_54_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_55_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_56_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3157 BMS_CellVolts15: 8 FoxESS_inverter
    SG_ cell_57_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_58_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_59_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_60_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 3161 BMS_CellVolts16: 8 FoxESS_inverter
    SG_ cell_61_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell_62_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
@@ -204,14 +219,44 @@ BO_ 3221 BMS_CellVolts31: 8 FoxESS_inverter
    SG_ cell123_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
    SG_ cell124_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
 
+BO_ 3225 BMS_CellVolts31: 8 FoxESS_inverter
+   SG_ cell125_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell126_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell127_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell128_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
+BO_ 3229 BMS_CellVolts31: 8 FoxESS_inverter
+   SG_ cell129_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell130_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell131_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell132_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
+BO_ 3233 BMS_CellVolts31: 8 FoxESS_inverter
+   SG_ cell133_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell134_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell135_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell136_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
+BO_ 3237 BMS_CellVolts31: 8 FoxESS_inverter
+   SG_ cell137_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell138_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell139_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell140_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
+BO_ 3241 BMS_CellVolts31: 8 FoxESS_inverter
+   SG_ cell141_volts : 0|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell142_volts : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell143_volts : 32|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ cell144_volts : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+
 BO_ 6257 Inverter_Request: 8 FoxESS_inverter
    SG_ Rqst_0 : 0|8@1+ (1,0) [0|256] "" FoxESS_inverter
    SG_ Rqst_2 : 16|8@1+ (1,0) [0|256] "" FoxESS_inverter
    SG_ Rqst_4 : 32|8@1+ (1,0) [0|256] "" FoxESS_inverter
 
 BO_ 6258 BMS_Limits: 8 FoxESS_inverter
-   SG_ slave_voltage_max : 0|16@1+ (0.1,0) [380|400] "V" FoxESS_inverter
-   SG_ slave_voltage_min : 16|16@1+ (0.1,0) [290|330] "V" FoxESS_inverter
+   SG_ batt_voltage_max : 0|16@1+ (0.1,0) [380|400] "V" FoxESS_inverter
+   SG_ batt_voltage_min : 16|16@1+ (0.1,0) [290|330] "V" FoxESS_inverter
    SG_ max_charge_rate : 32|16@1+ (0.1,0) [0|253] "A" FoxESS_inverter
    SG_ max_discharge_rate : 48|16@1+ (0.1,0) [0|35] "A" FoxESS_inverter
 
@@ -222,35 +267,47 @@ BO_ 6259 BMS_PackData: 8 FoxESS_inverter
    SG_ pack_kwh_remain : 48|16@1+ (0.01,0) [0|100] "kWh" FoxESS_inverter
 
 BO_ 6260 BMS_CellData: 8 FoxESS_inverter
-   SG_ cell_temperature_high : 0|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
-   SG_ cell_temperature_low : 16|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
-   SG_ cell_volts_high : 32|16@1+ (100,0) [2900|4200] "mV" FoxESS_inverter
-   SG_ cell_volts_low : 48|16@1+ (100,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ pack_cell_temp_high : 0|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
+   SG_ pack_cell_temp_low : 16|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
+   SG_ nu_cell_volts_high : 32|16@1+ (100,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ nu_cell_volts_low : 48|16@1+ (100,0) [2900|4200] "mV" FoxESS_inverter
 
 BO_ 6261 BMS_Status: 8 FoxESS_inverter
-   SG_ pack_temperature : 0|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
+   SG_ BMS_temperature : 0|16@1- (0.1,0) [-40|60] "C" FoxESS_inverter
+   SG_ pack1_ok: 16|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack2_ok: 17|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack3_ok: 18|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack4_ok: 19|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack5_ok: 20|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack6_ok: 21|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack7_ok: 22|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ pack8_ok: 23|1@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ contactor : 32|1@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ cycle_count : 48|16@1+ (1,0) [1|65535] "~" FoxESS_inverter
-
+   SG_ num_packs : 24|8@1- (1,0) [0|1] "" Vector__XXX
 
 BO_ 6262 BMS_PackTemps: 8 FoxESS_inverter
    SG_ bit : 0|1@1+ (1,0) [0|1] "" FoxESS_inverter
-   SG_ cell_millivolts_high : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
-   SG_ cell_millivolts_low : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ pack_cell_millivolts_high : 16|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
+   SG_ pack_cell_millivolts_low : 48|16@1+ (1,0) [2900|4200] "mV" FoxESS_inverter
 
-BO_ 6263 BMS_Unk1: 8 FoxESS_inverter
+BO_ 6263 BMS_PackInfo: 8 FoxESS_inverter
+   SG_ pack_error : 0|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ fv_pack_minor : 48|4@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ fv_pack_major : 52|4@1+ (1,0) [0|1] "" FoxESS_inverter
 
 BO_ 6264 BMS_PackStats: 8 FoxESS_inverter
-   SG_ pack_voltage : 0|16@1+ (0.1,0) [290|400] "V" FoxESS_inverter
+   SG_ max_ac_voltage : 0|16@1+ (0.1,0) [290|400] "V" FoxESS_inverter
    SG_ total_watt_hrs : 32|32@1+ (1,0) [0|4.29497e+08] "Wh" FoxESS_inverter
 
-BO_ 6265 BMS_Unk2: 8 FoxESS_inverter
-   SG_ b1_discharge  : 9|1@1+ (1,0) [0|1] "" FoxESS_inverter
-   SG_ b2_charge  : 10|1@1+ (1,0) [0|1] "" FoxESS_inverter
-   SG_ b3_bal_dischg  : 11|1@1+ (1,0) [0|1] "" FoxESS_inverter
-   SG_ b4_force_chg  : 12|1@1+ (1,0) [0|1] "" FoxESS_inverter
+BO_ 6265 BMS_PackState: 8 FoxESS_inverter
+   SG_ b0_idle : 8|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b1_ok_discharge : 9|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b2_ok_charge : 10|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b3_discharging : 11|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b4_charging : 12|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b5_operational : 13|1@1+ (1,0) [0|1] "" FoxESS_inverter
+   SG_ b6_active_error : 14|1@1+ (1,0) [0|1] "" FoxESS_inverter
 
 BO_ 3361 BMS_CellTemps: 8 FoxESS_inverter
    SG_ C1_Temp1 : 0|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
@@ -334,41 +391,57 @@ BO_ 3417 BMS_CellTemps: 8 FoxESS_inverter
 
 BO_ 3077 Pack_1: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
-BO_ 3078 Pack_2: 8 FoxESS_inverter1
+BO_ 3078 Pack_2: 8 Vector__XXX
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3079 Pack_3: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3080 Pack_4: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3081 Pack_5: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3082 Pack_6: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3083 Pack_7: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
 BO_ 3084 Pack_8: 8 FoxESS_inverter
    SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
+   SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C" FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
@@ -411,11 +484,15 @@ BA_DEF_ BO_ "matchingcriteria" INT 0 0;
 BA_DEF_ BO_ "filterlabeling" INT 0 0;
 BA_DEF_ BO_ "matchingcriteria" INT 0 0;
 BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
 BA_DEF_DEF_ "GenMsgBackgroundColor" "#1e1e1e";
 BA_DEF_DEF_ "GenMsgForegroundColor" "#ffffff";
 BA_DEF_DEF_ "labelfilters" 1;
 BA_DEF_DEF_ "matchingcriteria" 0;
 BA_DEF_DEF_ "filterlabeling" 0;
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" false;
 VAL_ 6273 1881_B1 48 "0" 49 "1" 50 "2" 51 "3" 52 "4" 53 "5" 54 "6" 55 "7" 56 "8" 57 "9" 65 "A" 66 "B" 67 "C" 68 "D" 69 "E" 70 "F" 71 "G" 72 "H" 73 "I" 74 "J" 75 "K" 76 "L" 77 "M" 78 "N" 79 "O" 80 "P" 81 "Q" 82 "R" 83 "S" 84 "T" 85 "U" 86 "V" 87 "W" 88 "X" 89 "Y" 90 "Z";
 VAL_ 6273 1881_B2 48 "0" 49 "1" 50 "2" 51 "3" 52 "4" 53 "5" 54 "6" 55 "7" 56 "8" 57 "9" 65 "A" 66 "B" 67 "C" 68 "D" 69 "E" 70 "F" 71 "G" 72 "H" 73 "I" 74 "J" 75 "K" 76 "L" 77 "M" 78 "N" 79 "O" 80 "P" 81 "Q" 82 "R" 83 "S" 84 "T" 85 "U" 86 "V" 87 "W" 88 "X" 89 "Y" 90 "Z";
 VAL_ 6273 1881_B3 48 "0" 49 "1" 50 "2" 51 "3" 52 "4" 53 "5" 54 "6" 55 "7" 56 "8" 57 "9" 65 "A" 66 "B" 67 "C" 68 "D" 69 "E" 70 "F" 71 "G" 72 "H" 73 "I" 74 "J" 75 "K" 76 "L" 77 "M" 78 "N" 79 "O" 80 "P" 81 "Q" 82 "R" 83 "S" 84 "T" 85 "U" 86 "V" 87 "W" 88 "X" 89 "Y" 90 "Z";
