@@ -3,6 +3,8 @@ FoxESS Canbus Protocol between BMS and H series inverter (extended V1 supporting
 
 Can bus @ 500k - all Extended ID, little endian
 
+For the BMS to HV2600 Battery RS485 protocol, see the following repo  [FoxESS BMS Battery RS485](https://github.com/FozzieUK/FoxESS-BMS-to-Battery-Protocol-RS485)
+
 ## Basic Protocol
 
 When starting up, the Foxess battery storage system unlike other systems does not have a formal adoption process, the inverter 'polls' the BMS every 1 second and if the BMS responds with a valid message then it is assumed available.
