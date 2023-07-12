@@ -83,7 +83,7 @@ for the BMS (b7=01) then convert b6 hex to decimal 0x12 = 018 , and if b6 was 0x
 
 ** Note7: 0x1877 b0 appears to be an error code, 0x02 when pack is in error.
 
-** Note8: 0x1877 b4 is battery type, where 0x82 is HV2600 V1, 0x84 is HV2600 V2
+** Note8: 0x1877 b4 is battery type, where 0x82 is HV2600 V1, 0x83 is ECS4100  v1, 0x84 is HV2600 V2
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/assets/113460294/fd08a1b5-706c-4a09-b4d5-318ee1627928)
