@@ -27,7 +27,7 @@ This is sent by the inverter every 1 second and appears to be the poll for bms_s
 | ------ | --------------- | ------------- | ----------------- | ----------------- | ---------------- | ------------- | ---------------- | --------------- |
 | 0x1872 | batt_volt_max   | batt_volt_max | batt_volt_min     | batt_volt_min     | max_charge_A     | max_charge_A  | max_discharge_A  | max_discharge_A |
 | 0x1873 | pack_volt_now   | pack_volt_now | pack_current sense| pack_current sense| pack_SoC         | 0x00          | pack_kwh_remain  | pack_kwh_remain |
-| 0x1874 | pack_temp_max   | pack_temp_max | pack_temp_min     | pack_temp_min     | pack_mv_max      | pack_mV_max   | pack_mV_min      | pack_mV_min     |
+| 0x1874 | pack_temp_max   | pack_temp_max | pack_temp_min     | pack_temp_min     | cut_mv_max       | cut_mV_max    | cut_mV_min       | cut_mV_min      |
 | 0x1875 | BMS_temp        | BMS_temp      | pack_state(note5) | number_packs      | 0x01 contact     | 0x00          | cycle_count      | cycle_count     |
 | 0x1876 | 0x01 (Note6)    | 0x00          | cells_volts_max   | cells_volts_max   | 0x00             | 0x00          | cells_volts_min  | cells_volts_min |
 | 0x1877 | packError(note7)| 0x00          | 0x00              | 0x00              | batt type(note 8)| 0x00          | ** See Note 3    | pack_id 0x10    |
@@ -75,7 +75,7 @@ for the packs (b7 =10,20,30,40,50,60,70,80) then b6 0x1F = 0001 1111, version is
 
 for the BMS (b7=01) then convert b6 hex to decimal 0x12 = 018 , and if b6 was 0x14 then = 020
      
-** Note4: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (not 0x1874 b4-b7 which stay at a constant 3,300mV hi/lo)
+** Note4: 0x1876 cell volts min / max - these appear to be used by the inverter to populate Home Assistant sensors (0x1874 b4-b7 are the BMS cut voltages usually a steady 3,200mV hi/lo)
 
 ** Note5: 0x1875 b2 contains status for operational packs (responding) in binary so 01111111 is pack 8 not operational, 11101101 is pack 5 & 2 not operational
 
