@@ -445,7 +445,7 @@ BO_ 3084 Pack_8: 8 FoxESS_inverter
    SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%" FoxESS_inverter
    SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V" FoxESS_inverter
 
-BO_ 6273 1881: 0 FoxESS_inverter
+BO_ 6273 1881: 8 FoxESS_inverter
    SG_ Pack_ID : 0|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1881_B1 : 8|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1881_B2 : 16|8@1+ (1,0) [0|1] "" FoxESS_inverter
@@ -455,7 +455,7 @@ BO_ 6273 1881: 0 FoxESS_inverter
    SG_ 1881_B6 : 48|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1881_B7 : 56|8@1+ (1,0) [0|1] "" FoxESS_inverter
 
-BO_ 6274 1882: 0 FoxESS_inverter
+BO_ 6274 1882: 8 FoxESS_inverter
    SG_ Pack_ID : 0|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1882_B1 : 8|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1882_B2 : 16|8@1+ (1,0) [0|1] "" FoxESS_inverter
@@ -465,7 +465,7 @@ BO_ 6274 1882: 0 FoxESS_inverter
    SG_ 1882_B6 : 48|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1882_B7 : 56|8@1+ (1,0) [0|1] "" FoxESS_inverter
 
-BO_ 6275 1883: 0 FoxESS_inverter
+BO_ 6275 1883: 8 FoxESS_inverter
    SG_ Pack_ID : 0|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1883_B1 : 8|8@1+ (1,0) [0|1] "" FoxESS_inverter
    SG_ 1883_B2 : 16|8@1+ (1,0) [0|1] "" FoxESS_inverter
