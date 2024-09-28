@@ -170,9 +170,9 @@ repeats up [144_cells]
 
 | ID     | b0                | b1                | b2                | b3                | b4           | b5           | b6               | b7              |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- | ------------ | ------------ | ---------------- | --------------- |
-| 0x0CA5 | cell_133_mv        | cell_133_mv      | cell_134_mv       | cell_134_mv       | cell_135_mv  | cell_135_mv  | cell_136_mv      | cell_136_mv     |
-| 0x0CA9 | cell_137_mv        | cell_137_mv      | cell_138_mv       | cell_138_mv       | cell_139_mv  | cell_139_mv  | cell_140_mv      | cell_140_mv     |
-| 0x0CAD | cell_141_mv        | cell_141_mv      | cell_142_mv       | cell_142_mv       | cell_143_mv  | cell_143_mv  | cell_144_mv      | cell_144_mv     |
+| 0x0CA1 | cell_133_mv        | cell_133_mv      | cell_134_mv       | cell_134_mv       | cell_135_mv  | cell_135_mv  | cell_136_mv      | cell_136_mv     |
+| 0x0CA5 | cell_137_mv        | cell_137_mv      | cell_138_mv       | cell_138_mv       | cell_139_mv  | cell_139_mv  | cell_140_mv      | cell_140_mv     |
+| 0x0CA9 | cell_141_mv        | cell_141_mv      | cell_142_mv       | cell_142_mv       | cell_143_mv  | cell_143_mv  | cell_144_mv      | cell_144_mv     |
 
 then immediately followed by cell temps (decimal 50 offset)
 
