@@ -29,7 +29,7 @@ This is sent by the inverter every 1 second and appears to be the poll for bms_s
 | 0x1873 | pack_volt_now   | pack_volt_now | pack_current sense| pack_current sense| pack_SoC         | 0x00          | pack_kwh_remain  | pack_kwh_remain |
 | 0x1874 | pack_temp_max   | pack_temp_max | pack_temp_min     | pack_temp_min     | cut_mv_max       | cut_mV_max    | cut_mV_min       | cut_mV_min      |
 | 0x1875 | BMS_temp        | BMS_temp      | pack_state(note5) | number_packs      | 0x01 contact     | 0x00          | cycle_count      | cycle_count     |
-| 0x1876 | 0x01 (Note6)    | 0x00          | cells_volts_max   | cells_volts_max   | 0x00             | 0x00          | cells_volts_min  | cells_volts_min |
+| 0x1876 | charge inhibit(note6)    | 0x00          | cells_volts_max   | cells_volts_max   | 0x00             | 0x00          | cells_volts_min  | cells_volts_min |
 | 0x1877 | packError(note7)| 0x00          | 0x00              | 0x00              | batt type(note 8)| 0x00          | ** See Note 3    | pack_id 0x10    |
 | 0x1878 | AC_volts_max    | AC_volts_max  | 0x00              | 0x00              | wh_total         | wh_total      | wh_total         | wh_total        |
 | 0x1879 | ErrorCode(note2)| FLAGS (Note1) | 0x00              | 0x00              | 0x00             | 0x00          | 0x00             | 0x00            |
@@ -79,11 +79,11 @@ for the BMS (b7=01) then convert b6 hex to decimal 0x12 = 018 , and if b6 was 0x
 
 ** Note5: 0x1875 b2 contains status for operational packs (responding) in binary so 01111111 is pack 8 not operational, 11101101 is pack 5 & 2 not operational
 
-** Note6: 0x1876 b0 bit 0 appears to be 1 when at maxsoc and BMS says charge is not allowed - when at 0 indicates charge is possible - addn'l note there is something more to it than this, it's not as straight forward - needs more testing to find what sets/unsets bit0 of byte0
+** Note6: 0x1876 b0 bit 0 is 1 when maxsoc is observed and/or BMS master instructs charge is not permitted. Charge is permitted if 0. This is a critical safety element for inhibiting battery charging, KH series relies on this bit and ignores 100% SoC limits
 
-** Note7: 0x1877 b0 appears to be an error code, 0x02 when pack is in error.
+** Note7: 0x1877 b0 appears to be an error code, 0x02 when pack is in error
 
-** Note8: 0x1877 b4 is battery type, where 0x82 is HV2600 V1, 0x83 is ECS4100  v1, 0x84 is HV2600 V2
+** Note8: 0x1877 b4 defines BMS master modules/battery type, where 0x52 is HV2600 V2 BMS master, 0x82 is HV2600 V1 slave, 0x83 is ECS4100  v1 slave, 0x84 is HV2600 V2 slave
 
 ### Screenshot
 ![Screenshot](https://github.com/FozzieUK/FoxESS-Canbus-Protocol/assets/113460294/fd08a1b5-706c-4a09-b4d5-318ee1627928)
