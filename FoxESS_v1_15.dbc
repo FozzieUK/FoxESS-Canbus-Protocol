@@ -399,7 +399,7 @@ BO_ 2147486725 Pack_1: 8 FoxESS_battery
  SG_ Pack_SoC : 32|8@1+ (1,0) [0|1] "%"  FoxESS_battery
  SG_ Pack_Volts : 48|16@1+ (0.001,0) [0|1] "V"  FoxESS_battery
 
-BO_ 2147484678 Pack_2: 8 FoxESS_battery
+BO_ 2147486726 Pack_2: 8 FoxESS_battery
  SG_ current_sensor : 0|16@1- (0.1,0) [0|1] "A"  FoxESS_battery
  SG_ Pack_Temp_Avg_Hi : 16|8@1+ (1,-50) [0|60] "C"  FoxESS_battery
  SG_ Pack_Temp_Avg_Lo : 24|8@1+ (1,-50) [0|60] "C"  FoxESS_battery
